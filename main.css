@@ -1,0 +1,81 @@
+.board {
+  width: 64vh;
+  height: 64vh;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  left: 50%;
+  top: 50%; }
+
+.tile-line {
+  display: flex;
+  width: 100%;
+  height: 8.34%; }
+
+.tile {
+  display: inline;
+  width: 8.34%;
+  position: relative; }
+  .tile:hover {
+    -webkit-filter: invert(70%);
+    filter: invert(70%);
+    cursor: pointer; }
+  .tile:after {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    font-size: 8px;
+    padding: 2px;
+    display: none; }
+  .tile.start:after {
+    content: 'start';
+    display: block; }
+  .tile.end:after {
+    content: 'end';
+    display: block; }
+
+.menu {
+  position: absolute;
+  left: 0;
+  top: 33%; }
+  .menu div {
+    margin: 12px;
+    padding: 4px;
+    border: 1px solid black;
+    text-align: center; }
+    .menu div:hover {
+      -webkit-filter: invert(70%);
+      filter: invert(70%);
+      cursor: pointer; }
+    .menu div.selected {
+      -webkit-filter: invert(70%);
+      filter: invert(70%);
+      cursor: pointer; }
+
+.try-again {
+  width: 128px;
+  height: 24px;
+  font-size: 16px;
+  padding: 4px;
+  border-left: 4px green solid;
+  text-align: center;
+  background-color: grey;
+  position: relative;
+  margin: 8px;
+  color: white; }
+  .try-again span {
+    position: absolute;
+    text-align: center;
+    left: 8px;
+    top: 4px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: green; }
+  .try-again:hover {
+    background-color: black; }
+    .try-again:hover span {
+      background-color: red; }
+
+/*# sourceMappingURL=main.css.map */

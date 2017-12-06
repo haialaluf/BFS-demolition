@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div ng-view>
+    <div ng-controller="mainControler">
+      <div class="board">
+        <div class="tile-line"
+             ng-repeat="line in board"
+             ng-class="{'start': state == 'start', 'end': state == 'end'}"
+             ng-style="{'height': calcHeight()}">
+
+          <div class="tile" ng-repeat="tile in line track by $index"
+               ng-style="{ 'background-color': (tile | paint: colorA: colorB: colorC), 'width': calcHeight() }"
+               ng-click="mark(tile)" ng-class="{'start': tile.state == 'start', 'end': tile.state == 'end'}"></div>
+        </div>
+      </div>
+
+      <div class="menu">
+        <div ng-class="{'selected': state == 'start'}" ng-click="state = !(state === 'start') ? 'start' : false">
+          Start
+        </div>
+        <div ng-class="{'selected': state == 'end'}" ng-click="state = !(state === 'end') ? 'end' : false">
+          End
+        </div>
+        <div ng-click="go()">
+          Go
+        </div>
+        <div ng-click="reset()">
+          Reset
+        </div>
+      </div>
+      <div class="colors">
+        <input placeholder="Size" type="number" ng-model="size">
+        <input placeholder="Speed" type="number" ng-model="speed">
+        <input placeholder="Color A" ng-model="colorA">
+        <input placeholder="Color B" ng-model="colorB">
+        <input placeholder="Color C" ng-model="colorC">
+      </div>
+
+    </div>
+
+
+  </div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
