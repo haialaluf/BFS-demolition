@@ -1,4 +1,4 @@
-# BFS-demolition
+# BFS-demonstration
 
 
 #### Fore use just clone the repository, run
